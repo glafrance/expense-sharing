@@ -1,0 +1,27 @@
+<div id="addParticipantContainer" class="darkGreen">
+    <form #addParticipantForm>
+        <label id="name_label" for="participant">Name: </label>
+        <input #participantName type="text" id="participant" name="participant" placeholder="participant name" /><br /><br />
+        <label id="expenses_label" for="expenses">Expenses</label>
+        <div id="new_expense_container">
+            <label id="expense_label" for="expense">Expense: </label>
+            <input #expenseName type="text" id="expense" name="expense" placeholder="expense name" [(ngModel)]="expenseNameValue" />
+            <label id="amountLabel" for="amount">Amount: </label>
+            <input #expenseAmount type="text" id="amount" name="amount" placeholder="amount" [(ngModel)]="expenseAmountValue" />
+            <button class="buttonOne addExpenseButton" 
+                [disabled]="expenseName.value === '' || expenseAmount.value === ''"
+                (click)="addExpense(expenseName.value, expenseAmount.value)">
+                Add Expense</button>
+        </div>
+    </form>
+    <div>
+        <p *ngFor="let expenseItem of expenses">{{expenseItem.name}} - ${{getAmount(expenseItem.amount)}}</p>
+        <p *ngIf="total > 0"><strong>Total: ${{totalAmount()}}</strong></p>
+    </div>    
+    <button id="addParticipantButton" class="buttonOne"
+        [disabled]="participantName.value === '' || expenses.length === 0"
+        (click)="addParticipant(participantName.value);addParticipantForm.reset()">
+        Add Participant
+    </button>
+    <hr />
+</div>

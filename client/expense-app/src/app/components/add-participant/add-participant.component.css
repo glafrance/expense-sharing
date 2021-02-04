@@ -1,0 +1,57 @@
+#addParticipantContainer {
+    text-align: center;
+}
+form {
+    text-align: left;
+    margin-bottom: 30px;
+}
+input {
+    padding: 5px;
+}
+#participant {
+    width: 250px;
+}
+#new_expense_container {
+    margin-top: 10px;
+    margin-left: 30px;
+}
+#expense {
+    margin-right: 30px;
+    width: 300px;
+}
+#amount {
+    width: 100px;
+}
+hr {
+    border-color: #4CAF50;    
+    margin-bottom: 20px;
+}
+
+@media (max-width: 480px) {
+    form {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    #new_expense_container {
+        margin-left: 0;
+        text-align: center;
+    }    
+    #name_label, #expense_label, #amountLabel {
+        display: none;
+    }
+    #expense {
+        margin-right: 10px;
+        width: 200px;
+    }
+    #amount {
+        width: 50px;
+        margin-bottom: 10px;
+    }    
+    .addExpenseButton {
+        display: block;
+        margin: auto;
+    }
+    #addParticipantButton {
+        margin-left: 0;
+    }
+}

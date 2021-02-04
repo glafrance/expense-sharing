@@ -1,0 +1,32 @@
+<app-header></app-header>
+<div id="appWrapper">
+  <div id="participantsHeading" class="darkGreen">
+    Participants 
+    <button *ngIf="!showAdd" 
+      id="addIcon" class="buttonOne" 
+      (click)="showAddParticipant()">+
+    </button>
+  </div>
+  <app-add-participant *ngIf="showAdd"></app-add-participant>
+  <h3 id="addParticipantsMessage" *ngIf="participants.length === 0 && !showAdd">
+    Add participants to get started.
+  </h3>
+  <div id="participantsContainer">
+    <app-participant 
+      *ngFor="let participant of participants" 
+      [participant]="participant">
+    </app-participant>
+  </div>
+  <p class="darkGreen" *ngIf="totalExpenses > 0">
+    <strong>Total expenses: {{totalExpenses}} - Each pays: {{averageExpenses}}</strong>
+  </p>
+  <button 
+    class="buttonOne" 
+    (click)="calculateFairShares()"
+    *ngIf="totalExpenses > 0 && participants.length > 1 && fairShares.length === 0">
+    Calculate Fair Shares
+  </button>
+  <div *ngIf="fairShares.length > 0">
+    <p class="darkGreen" *ngFor="let fairShare of fairShares">{{fairShare}}</p>
+  </div>
+</div>

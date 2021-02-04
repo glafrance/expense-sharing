@@ -1,0 +1,9 @@
+<div class="participant-details darkGreen">
+    <div class="participant-name">{{participant.name}}</div>
+    <div class="participant-expenses">
+        <div class="expense" *ngFor="let expense of participant.expenses">
+            {{expense.name}} - ${{getAmount(expense.amount)}}
+        </div>
+        <div class="total">Total: ${{totalAmount()}}</div>
+    </div>
+</div>

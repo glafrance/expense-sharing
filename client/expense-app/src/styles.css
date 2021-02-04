@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.buttonOne {
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    border-color: transparent;
+    color: white;
+    background-color: #4CAF50;
+}
+.buttonOne:disabled {
+    background-color: #A5D6A7;
+}
+.darkGreen {
+    color: #1B5E20;
+}
+
